@@ -1,0 +1,17 @@
+{
+    "contents" : "\nfwf <- read.fwf(\"getdata-wksst8110.for\", skip=4,\n                widths=c(-1, 9, rep( c(-5, 4, 4), times=4 ) ) )\n\nnames(fwf) <- c(\"Week\", rep( c(\"SST\", \"SSTA\"), times=4 ) )\n\ntotal <- sum(fwf[,4])",
+    "created" : 1421397769098.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3610519830",
+    "id" : "A9FE7CE6",
+    "lastKnownWriteTime" : 1421398950,
+    "path" : "D:/Git/DataScience/03GetCleanData/week2/quiz05.R",
+    "project_path" : "quiz05.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

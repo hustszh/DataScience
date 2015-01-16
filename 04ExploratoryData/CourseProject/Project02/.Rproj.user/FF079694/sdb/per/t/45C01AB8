@@ -1,0 +1,17 @@
+{
+    "contents" : "library(dplyr)\nlibrary(ggplot2)\n\n# read data\nNEI <- readRDS(\"summarySCC_PM25.rds\")\n\n# group date by year\nemissions_by_year <- NEI %>% \n                 filter( fips==\"24510\" )  %>% \n                 group_by( year ) %>% \n                 summarize( sum(Emissions) )\nnames(emissions_by_year) <- c(\"year\",\"emissions\")\n\n# open device\npng(filename=\"plot2.PNG\", width=480, height=480, units=\"px\")\n\n# plot data\nwith( emissions_by_year,\n      plot(year, emissions, xaxt=\"n\", main=\"Baltimore Total Emissions by Year\") )\naxis( side=1, at=emissions_by_year$year ) # add X axis\n\n# add linear regression line\nmodel <- lm( emissions ~ year, emissions_by_year )\nabline( model, lwd=2, col=\"red\" )\n\n#close device\ndev.off()\n\n",
+    "created" : 1421287918989.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "58382097",
+    "id" : "45C01AB8",
+    "lastKnownWriteTime" : 1421301186,
+    "path" : "D:/Git/DataScience/04ExploratoryData/CourseProject/Project02/plot3.R",
+    "project_path" : "plot3.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

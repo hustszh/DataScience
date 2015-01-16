@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1421288404721.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A74B0793",
+    "lastKnownWriteTime" : 31525712792191028,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "total_by_year",
+        "contentUrl" : "content?title=total_by_year&file=01e4fe1e0789448cb8e408c0dba0043a.htm",
+        "displayedObservations" : "4",
+        "displayedVariables" : 2,
+        "totalObservations" : "4",
+        "variables" : "2"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
