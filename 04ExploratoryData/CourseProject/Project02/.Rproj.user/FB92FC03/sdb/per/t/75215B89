@@ -1,0 +1,16 @@
+{
+    "contents" : "library(dplyr)\n\n# read data\nNEI <- readRDS(\"summarySCC_PM25.rds\")\n\n# group date by year\ntotal_by_year <- NEI %>% group_by( year ) %>% summarize( sum(Emissions) )\nnames(total_by_year) <- c(\"year\",\"emissions\")\n\n# open device\npng(filename=\"plot1.PNG\", width=480, height=480, units=\"px\")\n\n# plot data\nwith( total_by_year,\n      plot(year, emissions, xaxt=\"n\", main=\"Total Emissions by Year\") )\naxis( side=1, at=total_by_year$year ) # add X axis\n\n# add linear regression line\nmodel <- lm( emissions ~ year, total_by_year )\nabline( model, lwd=2, col=\"red\" )\n\n#close device\ndev.off()\n\n",
+    "created" : 1421544461143.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "648117027",
+    "id" : "75215B89",
+    "lastKnownWriteTime" : 1421410851,
+    "path" : "D:/devtool/git_workspace/DataScience/04ExploratoryData/CourseProject/Project02/plot1.R",
+    "project_path" : "plot1.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
