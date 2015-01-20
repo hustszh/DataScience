@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1421746688255.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "71EF8472",
+    "lastKnownWriteTime" : 7741240722073845761,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "joinData",
+        "contentUrl" : "content?title=joinData&file=a4a685c6fb51459fb0cb16268b3a994e.htm",
+        "displayedObservations" : 189,
+        "displayedVariables" : 5,
+        "totalObservations" : 189,
+        "variables" : 5
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

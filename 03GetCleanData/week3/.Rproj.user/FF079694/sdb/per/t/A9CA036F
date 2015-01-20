@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1421746625633.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A9CA036F",
+    "lastKnownWriteTime" : 7741240722073845761,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "education",
+        "contentUrl" : "content?title=education&file=26d0a7f983fa41f3bfa8d14d4e3f26a5.htm",
+        "displayedObservations" : "234",
+        "displayedVariables" : 31,
+        "totalObservations" : "234",
+        "variables" : "3"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "library(curl)\nlibrary(plyr)\n\ngdpURL <- \"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv\"\ndownload.file(gdpURL, destfile=\"./data/gdp.csv\")\ngdp <- read.csv(\"./data/gdp.csv\", header=TRUE, blank.lines.skip=TRUE,\n                row.names=NULL, stringsAsFactors=FALSE )\ngdp <- gdp[gdp[,2] %in% 1:190,] #取出有排名的数据\ngdp <- gdp[,c(1,2,5)]\nnames(gdp) <- c(\"id\", \"rank\",\"gdp\")\nrow.names(gdp) <- NULL\n\neducationURL <- \"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv\"\ndownload.file(educationURL, destfile=\"./data/education.csv\")\neducation <- read.csv(\"./data/education.csv\", header=TRUE,\n                      blank.lines.skip=TRUE, stringsAsFactors=FALSE)\neducation <- education[,c(\"CountryCode\",\"Long.Name\",\"Income.Group\")]\nnames(education) <- c(\"id\",\"country\",\"income\")\n\njoinData <- join(gdp, education, by=\"id\", type=\"inner\")\njoinData$gdp <- gsub(\"[, ]\", \"\", joinData$gdp)\njoinData$gdp <- as.numeric(joinData$gdp)\njoinData$income <- factor(joinData$income)\n\n#对income进行分组，求出每组的平均值\nincome_mean <- tapply(joinData$gdp, joinData$income, mean)\n# \"High income: OECD\" group\nsum(income_mean[2] < joinData$gdp)\n\n#\"High income: nonOECD\" group\nsum(income_mean[1] < joinData$gdp)\n",
+    "created" : 1421742498003.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4055102375",
+    "id" : "608A234",
+    "lastKnownWriteTime" : 1421747943,
+    "path" : "D:/Git/DataScience/03GetCleanData/week3/quiz04.R",
+    "project_path" : "quiz04.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
