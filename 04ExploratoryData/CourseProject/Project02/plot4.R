@@ -3,6 +3,7 @@ library(ggplot2)
 
 # read data
 NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
 
 # select data from baltimore
 baltimore_emissions <- NEI %>% 
